@@ -129,7 +129,7 @@ class Adam:
         self.m=list()
         self.v=list()
         self.step=0
-    def initialization(a,self):
+    def initialization(a):
         self.m.append(np.zeros(a.shape))
         self.v.append(np.zeros(a.shape))
     def update(self,params,grads):
