@@ -120,20 +120,6 @@ class Input:
         self.data = sample
 
         
-class Adam:
-    def __init__(self,lr=0.001):
-        self.lr=lr
-        self.beta1=0.9
-        self.beta2=0.999
-        self.eps=1e-7
-        self.m=list()
-        self.v=list()
-        self.step=0
-    def initialization(a):
-        self.m.append(np.zeros(a.shape))
-        self.v.append(np.zeros(a.shape))
-    def update(self,params,grads):
-        self.m
             
         
 
