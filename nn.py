@@ -15,8 +15,6 @@ class Linear:
         else:
             self.optimizer = SGD()
 
-        
-        
     def forward(self, input):
         self.input = input
         return np.dot(input,self.weight)/input.shape[0]

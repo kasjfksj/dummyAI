@@ -1,5 +1,5 @@
 import numpy as np
-import matplotlib.pyplot as plt
+
 from keras.datasets import mnist
 from nn import Net, Linear
 from activateFunction import Tanh,Leakly_ReLU,ReLU
