@@ -1,5 +1,5 @@
 import numpy as np
-from Optimizer import Momentum,SGD
+from Optimizer import Momentum,SGD,Adam
 
 
 class Linear:
@@ -12,6 +12,8 @@ class Linear:
         self.input = None
         if type(optimizer).__name__=="Momentum":
             self.optimizer = Momentum()
+        elif type(optimizer).__name__=="Adam":
+            self.optimizer = Adam()
         else:
             self.optimizer = SGD()
 

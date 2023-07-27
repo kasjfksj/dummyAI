@@ -4,9 +4,9 @@ from keras.datasets import mnist
 from nn import Net, Linear
 from activateFunction import Tanh,Leakly_ReLU,ReLU
 from lossFunction import MSE, CrossEntropyLoss
+
 import requests
 import ssl
-
 requests.packages.urllib3.disable_warnings()
 try:
     _create_unverified_https_context = ssl._create_unverified_context
@@ -37,12 +37,10 @@ if __name__=="__main__":
     net =Net()
     net.Sequential(
         Linear(784,256,optimizer="Momentum"),
-        ReLU(),
+        Leakly_ReLU(),
         Linear(256,128,optimizer="Momentum"),
-        ReLU(),
-        Linear(128,64,optimizer="Momentum"),
-        ReLU(),
-        Linear(64,10,optimizer="Momentum")
+        Leakly_ReLU(),
+        Linear(128,10,optimizer="Momentum")
     )
     loss = CrossEntropyLoss()
     count=1
