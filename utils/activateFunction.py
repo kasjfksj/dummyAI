@@ -22,7 +22,7 @@ class Sigmoid:
         twice, which costs a lot of time. If use the output to calculate gradient,
         only need to multiply. 
         """
-        self.output = 1 / (1 + np.exp(-input))
+        self.output = 1 / (1 + np.exp(-1*input))
         return self.output  
     def backward(self,error):
         return self.output*(1-self.output)*error
@@ -49,5 +49,15 @@ class Leakly_ReLU:
         a = np.array(np.maximum(self.input,0)>0,dtype = np.int32)+np.array(np.maximum(self.input,self.input*0.5)<0,dtype = np.int32)*0.5
         return a*error
 
+class Swish:
+    def __init__(self):
+        self.input = None
+        self.output = None
+    def forward(self,input):
+        self.input=input
+        self.output = 1 / (1 + np.exp(-1*input))
+        return input*self.output  
+    def backward(self,error):
+        return (self.output + self.input*self.output*(1-self.output))*error
 
 
